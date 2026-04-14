@@ -1,0 +1,34 @@
+<script>
+  const myQuotes = [
+    { content: "Price is what you pay, value is what you get.", author: "You" },
+    { content: "Good benefits retain talent, great benefits attract it.", author: "You" },
+    { content: "Risk managed well is opportunity unlocked.", author: "You" }
+  ];
+
+  async function getQuote() {
+    document.getElementById("quote").innerText = "Loading...";
+    document.getElementById("author").innerText = "";
+
+    // 50% chance use your own quote
+    if (Math.random() < 0.5) {
+      const q = myQuotes[Math.floor(Math.random() * myQuotes.length)];
+      document.getElementById("quote").innerText = `"${q.content}"`;
+      document.getElementById("author").innerText = `- ${q.author}`;
+      return;
+    }
+
+    // Otherwise call API
+    try {
+      const response = await fetch("https://api.quotable.io/random");
+      const data = await response.json();
+
+      document.getElementById("quote").innerText = `"${data.content}"`;
+      document.getElementById("author").innerText = `- ${data.author}`;
+    } catch {
+      // fallback to your quotes if API fails
+      const q = myQuotes[Math.floor(Math.random() * myQuotes.length)];
+      document.getElementById("quote").innerText = `"${q.content}"`;
+      document.getElementById("author").innerText = `- ${q.author}`;
+    }
+  }
+</script>

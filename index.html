@@ -90,9 +90,26 @@
 
   <script>
     const myQuotes = [
-      { quote: "Price is what you pay, value is what you get.", author: "You" },
-      { quote: "Good benefits retain talent, great benefits attract it.", author: "You" },
-      { quote: "Risk managed well is opportunity unlocked.", author: "You" }
+      { quote: "Orang cakap x nak dengar", author: "JL" },
+      { quote: "Lang Jeng Dit", author: "Charles" },
+      { quote: "Steady bom bi bi", author: "Anon" }
+
+      // Employee Benefits Focused
+      { quote: "A ping-pong table is not a benefits package. Dental insurance is.", author: "CWS" },
+      { quote: "Good salaries get people in the door; great benefits keep them from looking for the exit.", author: "CWS" },
+      { quote: "I'm the person HR calls when they realize 'thoughts and prayers' aren't a valid health plan.", author: "CWS" },
+      { quote: "Employee benefits: Because 'Employee of the Month' plaques don't pay for root canals.", author: "CWS" },
+  
+      // General Insurance & Risk
+      { quote: "Insurance: The only product you buy and pray you never have to use.", author: "CWS" },
+      { quote: "I’m not a superhero, but I do provide 'Umbrella' coverage.", author: "CWS" },
+      { quote: "Risk managed well is opportunity unlocked.", author: "CWS" },
+      { quote: "Premium is what you pay, Peace of Mind is what I deliver.", author: "CWS" },
+      { quote: "Why did the broker cross the road? To mitigate the risk of the chicken's journey.", author: "CWS" }
+
+      // General Insurance & Risk
+      { quote: "Aon is in the business of better decisions.", author: "Aon" },
+      { quote: "Shape decisions for the better — to protect and enrich the lives of people around the world", author: "Aon" },
     ];
 
     async function getQuote() {
@@ -103,7 +120,7 @@
       authorEl.innerText = "";
 
       // 50% chance to use your own quote
-      if (Math.random() < 0.5) {
+      if (Math.random() < 0.8) {
         const q = myQuotes[Math.floor(Math.random() * myQuotes.length)];
         quoteEl.innerText = `"${q.quote}"`;
         authorEl.innerText = `- ${q.author}`;

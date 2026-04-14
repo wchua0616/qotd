@@ -92,7 +92,7 @@
     const myQuotes = [
       { quote: "Orang cakap x nak dengar", author: "JL" },
       { quote: "Lang Jeng Dit", author: "Charles" },
-      { quote: "Steady bom bi bi", author: "Anon" }
+      { quote: "Steady bom bi bi", author: "Anon" },
 
       // Employee Benefits Focused
       { quote: "A ping-pong table is not a benefits package. Dental insurance is.", author: "CWS" },
@@ -107,7 +107,7 @@
       { quote: "Premium is what you pay, Peace of Mind is what I deliver.", author: "CWS" },
       { quote: "Why did the broker cross the road? To mitigate the risk of the chicken's journey.", author: "CWS" }
 
-      // General Insurance & Risk
+      // Aon
       { quote: "Aon is in the business of better decisions.", author: "Aon" },
       { quote: "Shape decisions for the better — to protect and enrich the lives of people around the world", author: "Aon" },
     ];
@@ -119,7 +119,7 @@
       quoteEl.innerText = "Fetching wisdom...";
       authorEl.innerText = "";
 
-      // 50% chance to use your own quote
+      // 80% chance to use your own quote
       if (Math.random() < 0.8) {
         const q = myQuotes[Math.floor(Math.random() * myQuotes.length)];
         quoteEl.innerText = `"${q.quote}"`;
